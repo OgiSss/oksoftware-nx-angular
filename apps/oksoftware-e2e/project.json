@@ -1,0 +1,28 @@
+{
+  "root": "apps/oksoftware-e2e",
+  "sourceRoot": "apps/oksoftware-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/oksoftware-e2e/cypress.json",
+        "devServerTarget": "oksoftware:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "oksoftware:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/oksoftware-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["oksoftware"]
+}

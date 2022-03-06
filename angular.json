@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "oksoftware": "apps/oksoftware",
+    "oksoftware-e2e": "apps/oksoftware-e2e"
+  }
+}
