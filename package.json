@@ -1,21 +1,12 @@
 {
-  "name": "oksoftware-nx-angular",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
-  },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",
+    "@angular/cdk": "~13.3.0",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
     "@angular/core": "~13.2.0",
     "@angular/forms": "~13.2.0",
+    "@angular/material": "~13.3.0",
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
@@ -53,5 +44,16 @@
     "prettier": "^2.5.1",
     "ts-jest": "27.0.5",
     "typescript": "~4.5.2"
-  }
+  },
+  "license": "MIT",
+  "name": "oksoftware-nx-angular",
+  "private": true,
+  "scripts": {
+    "build": "nx build",
+    "ng": "nx",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "start": "nx serve",
+    "test": "nx test"
+  },
+  "version": "0.0.0"
 }

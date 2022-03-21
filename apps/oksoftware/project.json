@@ -1,38 +1,31 @@
 {
+  "prefix": "oksoftware-nx-angular",
   "projectType": "application",
   "root": "apps/oksoftware",
   "sourceRoot": "apps/oksoftware/src",
-  "prefix": "oksoftware-nx-angular",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/oksoftware",
-        "index": "apps/oksoftware/src/index.html",
-        "main": "apps/oksoftware/src/main.ts",
-        "polyfills": "apps/oksoftware/src/polyfills.ts",
-        "tsConfig": "apps/oksoftware/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/oksoftware/src/favicon.ico",
-          "apps/oksoftware/src/assets"
-        ],
-        "styles": ["apps/oksoftware/src/styles.scss"],
-        "scripts": []
-      },
       "configurations": {
+        "development": {
+          "buildOptimizer": false,
+          "extractLicenses": false,
+          "namedChunks": true,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
         "production": {
           "budgets": [
             {
-              "type": "initial",
+              "maximumError": "1mb",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "type": "initial"
             },
             {
-              "type": "anyComponentStyle",
+              "maximumError": "4kb",
               "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "type": "anyComponentStyle"
             }
           ],
           "fileReplacements": [
@@ -42,29 +35,28 @@
             }
           ],
           "outputHashing": "all"
-        },
-        "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
-          "sourceMap": true,
-          "namedChunks": true
         }
       },
-      "defaultConfiguration": "production"
-    },
-    "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
-      "configurations": {
-        "production": {
-          "browserTarget": "oksoftware:build:production"
-        },
-        "development": {
-          "browserTarget": "oksoftware:build:development"
-        }
+      "defaultConfiguration": "production",
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "assets": [
+          "apps/oksoftware/src/favicon.ico",
+          "apps/oksoftware/src/assets"
+        ],
+        "index": "apps/oksoftware/src/index.html",
+        "inlineStyleLanguage": "scss",
+        "main": "apps/oksoftware/src/main.ts",
+        "outputPath": "dist/apps/oksoftware",
+        "polyfills": "apps/oksoftware/src/polyfills.ts",
+        "scripts": [],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/oksoftware/src/styles.scss"
+        ],
+        "tsConfig": "apps/oksoftware/tsconfig.app.json"
       },
-      "defaultConfiguration": "development"
+      "outputs": ["{options.outputPath}"]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -81,14 +73,25 @@
         ]
       }
     },
+    "serve": {
+      "configurations": {
+        "development": {
+          "browserTarget": "oksoftware:build:development"
+        },
+        "production": {
+          "browserTarget": "oksoftware:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server"
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/oksoftware"],
       "options": {
         "jestConfig": "apps/oksoftware/jest.config.js",
         "passWithNoTests": true
-      }
+      },
+      "outputs": ["coverage/apps/oksoftware"]
     }
-  },
-  "tags": []
+  }
 }
