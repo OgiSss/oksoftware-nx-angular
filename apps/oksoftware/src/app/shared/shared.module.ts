@@ -1,15 +1,25 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
+
+import {
+  NbAlertModule,
+  NbButtonModule,
+  NbInputModule,
+  NbCardModule,
+  NbFormFieldModule,
+  NbIconModule,
+  NbCheckboxModule,
+} from '@nebular/theme';
 
 const modules = [
-  MatCardModule,
-  MatFormFieldModule,
-  MatButtonModule,
-  MatInputModule,
+  NbButtonModule,
+  NbAlertModule,
+  NbButtonModule,
+  NbInputModule,
+  NbCardModule,
+  NbFormFieldModule,
+  NbIconModule,
+  NbCheckboxModule,
 ];
 
 @NgModule({

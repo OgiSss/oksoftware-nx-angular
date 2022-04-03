@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
 import { environment as env } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TitleService {
   constructor(
@@ -29,7 +29,7 @@ export class TitleService {
       translate
         .get(title)
         .pipe(filter((translatedTitle) => translatedTitle !== title))
-        .subscribe((translatedTitle) =>
+        .subscribe((translatedTitle: any) =>
           this.title.setTitle(`${translatedTitle} - ${env.appName}`)
         );
     } else {

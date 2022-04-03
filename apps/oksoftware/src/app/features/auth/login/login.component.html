@@ -1,0 +1,57 @@
+<div class="login-wrapper">
+       <nb-card>
+              <nb-card-body>
+                     <form class="login"
+                           [formGroup]="loginForm">
+                            <div class="login__title">
+                                   <h2>Sign in</h2>
+                                   <h4>Hello! Sign in with your email and password</h4>
+                            </div>
+                            <nb-form-field>
+                                   <nb-icon nbPrefix
+                                            icon="at-outline"
+                                            pack="eva"></nb-icon>
+                                   <input type="text"
+                                          formControlName="email"
+                                          fullWidth
+                                          placeholder="Email"
+                                          nbInput>
+                            </nb-form-field>
+                            <nb-form-field>
+                                   <input [type]="getInputType()"
+                                          formControlName="password"
+                                          fullWidth
+                                          placeholder="Password"
+                                          nbInput>
+                                   <button nbPrefix
+                                           nbButton
+                                           ghost
+                                           (click)="toggleShowPassword()">
+                                          <nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                                                   pack="eva"
+                                                   [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+                                          </nb-icon>
+                                   </button>
+                            </nb-form-field>
+                            <nb-checkbox formControlName="rememberMe"
+                                         status="basic">Remember me</nb-checkbox>
+
+                            <button nbButton
+                                    class="login__button"
+                                    type="submit"
+                                    fullWidth
+                                    (click)="onSubmit()"
+                                    status="primary">Login</button>
+                            <section class="login__forgot-password">
+                                   <a class="login__register-button"
+                                      routerLink="/auth/forgot-password">Forgot password?</a>
+                            </section>
+                            <section class="login__register">
+                                   Don't have an account?
+                                   <a class="login__register-button"
+                                      routerLink="/auth/register">Sign Up</a>
+                            </section>
+                     </form>
+              </nb-card-body>
+       </nb-card>
+</div>
