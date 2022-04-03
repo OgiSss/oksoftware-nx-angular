@@ -1,8 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NbToastrService } from '@nebular/theme';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+import { AuthState } from '../../../core/auth/auth.models';
+import { Store } from '@ngrx/store';
+import { authReducer } from '../../../core/auth/auth.reducer';
+import { authLogin } from '../../../core/core.module';
 
 @Component({
   selector: 'oksoftware-nx-angular-login',
@@ -20,7 +24,8 @@ export class LoginComponent implements OnDestroy {
   constructor(
     private readonly toastrService: NbToastrService,
     readonly formBuilder: FormBuilder,
-    private readonly authService: AuthService
+    private readonly router: Router,
+    private readonly store: Store<AuthState>
   ) {
     this.loginForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -64,10 +69,8 @@ export class LoginComponent implements OnDestroy {
   }
 
   login() {
-    const { email, password } = this.loginForm.value;
+    const { email, password, rememberMe } = this.loginForm.value;
 
-    this.authService.login(email, password).subscribe((result: any) => {
-      localStorage.setItem('auth', JSON.stringify(result));
-    });
+    this.store.dispatch(authLogin({ email, password, rememberMe }));
   }
 }

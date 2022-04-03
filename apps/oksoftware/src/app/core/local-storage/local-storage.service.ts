@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 
-const APP_PREFIX = 'ANMS-';
+const APP_PREFIX = 'OKSoftware-';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocalStorageService {
-  constructor() {}
-
   static loadInitialState() {
     return Object.keys(localStorage).reduce((state: any, storageKey) => {
       if (storageKey.includes(APP_PREFIX)) {

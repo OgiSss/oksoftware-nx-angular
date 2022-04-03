@@ -7,19 +7,22 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NbIconModule } from '@nebular/theme';
-import { AuthService } from './services/auth.service';
-
+import { AuthService } from '../../core/auth/services/auth.service';
+import { AuthComponent } from './auth/auth.component';
+import { NbSidebarModule, NbLayoutModule } from '@nebular/theme';
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    LoginComponent,
     ForgotPasswordComponent,
+    AuthComponent,
   ],
   imports: [
     HttpClientModule,
     AuthRoutingModule,
     NbIconModule,
+    NbLayoutModule,
+    NbSidebarModule,
 
     // Forms
     FormsModule,

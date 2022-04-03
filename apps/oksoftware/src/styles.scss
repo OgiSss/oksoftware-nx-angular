@@ -13,3 +13,12 @@
 
 //custom
 @import 'sass/main';
+
+//Global
+.layout-background .layout {
+  background: linear-gradient(
+    to left bottom,
+    nb-theme(color-primary-300),
+    nb-theme(color-primary-600)
+  );
+}

@@ -5,17 +5,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './features/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbToastrModule } from '@nebular/theme';
+import { NbMenuModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { NbSidebarModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-// import { CoreModule } from './core/core.module';
+import { CoreModule } from './core/core.module';
 
 const nebularModules = [
   NbThemeModule.forRoot(),
   NbSidebarModule.forRoot(),
   NbToastrModule.forRoot(),
+  NbMenuModule.forRoot(),
   NbEvaIconsModule,
-  NbLayoutModule,
 ];
 
 @NgModule({
@@ -25,7 +25,7 @@ const nebularModules = [
     AppRoutingModule,
     BrowserAnimationsModule,
     ...nebularModules,
-    // CoreModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

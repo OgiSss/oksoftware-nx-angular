@@ -20,44 +20,37 @@ export const selectSettingsLanguage = createSelector(
 
 export const selectTheme = createSelector(
   selectSettings,
-  (settings) => settings.theme
+  (settings: SettingsState) => settings.theme
 );
 
 export const selectPageAnimations = createSelector(
   selectSettings,
-  (settings) => settings.pageAnimations
+  (settings: SettingsState) => settings.pageAnimations
 );
 
 export const selectElementsAnimations = createSelector(
   selectSettings,
-  (settings) => settings.elementsAnimations
+  (settings: SettingsState) => settings.elementsAnimations
 );
 
 export const selectAutoNightMode = createSelector(
   selectSettings,
-  (settings) => settings.autoNightMode
+  (settings: SettingsState) => settings.autoNightMode
 );
 
 export const selectNightTheme = createSelector(
   selectSettings,
-  (settings) => settings.nightTheme
+  (settings: SettingsState) => settings.nightTheme
 );
 
 export const selectHour = createSelector(
   selectSettings,
-  (settings) => settings.hour
+  (settings: SettingsState) => settings.hour
 );
 
 export const selectIsNightHour = createSelector(
   selectAutoNightMode,
   selectHour,
-  (autoNightMode, hour) => autoNightMode && (hour >= 21 || hour <= 7)
-);
-
-export const selectEffectiveTheme = createSelector(
-  selectTheme,
-  selectNightTheme,
-  selectIsNightHour,
-  (theme, nightTheme, isNightHour) =>
-    (isNightHour ? nightTheme : theme).toLowerCase()
+  (autoNightMode: boolean, hour: number) =>
+    autoNightMode && (hour >= 21 || hour <= 7)
 );

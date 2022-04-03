@@ -1,8 +1,2 @@
 @use '../sass/theme/theme' as *;
-.bg ::ng-deep .layout {
-  background: linear-gradient(
-    to left bottom,
-    nb-theme(color-primary-300),
-    nb-theme(color-primary-600)
-  );
-}
+

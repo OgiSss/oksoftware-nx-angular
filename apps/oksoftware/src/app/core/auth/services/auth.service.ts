@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
+import { UserResponseModel } from '../auth.models';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly url: string = environment.url;
 
@@ -32,6 +33,8 @@ export class AuthService {
       password,
     });
     const registerUrl = `${this.url}/api/auth/local`;
-    return this.httpClient.post(registerUrl, data, { headers });
+    return this.httpClient.post<UserResponseModel>(registerUrl, data, {
+      headers,
+    });
   }
 }
