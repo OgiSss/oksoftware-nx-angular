@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    nb-icon {
+      cursor: pointer;
+      font-size: 2rem;
+    }
+    img {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+
+  &__description {
+    margin: auto 1rem;
+  }
+}

@@ -12,3 +12,13 @@ export const selectIsAuthenticated = createSelector(
   selectAuthState,
   (state: AuthState) => state.isAuthenticated
 );
+
+export const selectJwt = createSelector(
+  selectAuthState,
+  (state: AuthState) => state.jwt
+);
+
+export const selectJwtIsExist = createSelector(
+  selectAuthState,
+  (state: AuthState) => !!state.jwt
+);

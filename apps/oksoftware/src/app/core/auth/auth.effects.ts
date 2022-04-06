@@ -38,9 +38,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(authLoginSuccess),
         tap(({ payload }) => {
-          if (payload.rememberMe) {
-            this.localStorageService.setItem(AUTH_KEY, payload);
-          }
+          this.localStorageService.setItem(AUTH_KEY, payload);
           this.router.navigateByUrl(Navigation.Admin);
         })
       ),
@@ -53,7 +51,7 @@ export class AuthEffects {
         ofType(authLogout),
         tap(() => {
           this.localStorageService.removeItem(AUTH_KEY);
-          this.router.navigate(['']);
+          this.router.navigateByUrl(Navigation.Login);
         })
       ),
     { dispatch: false }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NbMenuItem, NbSidebarService } from '@nebular/theme';
 import { AppState, authLogout } from '../../core/core.module';
 import { Store } from '@ngrx/store';
 
@@ -7,28 +7,40 @@ import { Store } from '@ngrx/store';
   selector: 'oksoftware-nx-angular-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminComponent {
   items: NbMenuItem[] = [
     {
-      title: 'Profile',
-      icon: 'person-outline',
+      title: 'Home',
+      link: 'home',
+      icon: 'home-outline',
     },
     {
-      title: 'Change Password',
-      icon: 'lock-outline',
+      title: 'Data grid',
+      icon: 'book-outline',
+      link: 'grid',
+    },
+    {
+      title: 'Angular features',
+      icon: { icon: 'bulb-outline', pack: 'eva' },
+      link: 'features',
     },
     {
       title: 'Privacy Policy',
       icon: { icon: 'checkmark-outline', pack: 'eva' },
-    },
-    {
-      title: 'Logout',
-      icon: 'unlock-outline',
+      link: 'privacy',
     },
   ];
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private sidebarService: NbSidebarService,
+    private store: Store<AppState>
+  ) {}
+
+  toggle() {
+    this.sidebarService.toggle(false, 'left');
+  }
 
   logout() {
     this.store.dispatch(authLogout());

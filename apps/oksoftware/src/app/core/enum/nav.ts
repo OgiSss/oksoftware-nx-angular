@@ -1,5 +1,5 @@
 export enum Navigation {
   Home = 'home',
-  Login = 'login',
+  Login = 'auth/login',
   Admin = 'admin',
 }

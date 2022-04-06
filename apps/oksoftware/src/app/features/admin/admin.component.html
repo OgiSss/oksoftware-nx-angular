@@ -1,12 +1,30 @@
 <nb-layout class="layout-background">
 
     <nb-layout-header fixed>
-        <nb-actions class="">
-            <nb-action icon="home-outline"></nb-action>
-            <nb-action icon="search-outline"></nb-action>
-            <nb-action (click)="logout()"
-                       icon="log-out-outline"></nb-action>
-        </nb-actions>
+        <div class="header">
+            <div class="header__logo">
+                <nb-icon icon="menu-2-outline"
+                         (click)="toggle()"></nb-icon>
+                <img class=""
+                     srcset="/assets/img/logo.svg" />
+            </div>
+
+            <div class="header__actions">
+                <div class="profile">
+                    <nb-user class="profile__image"
+                             size="medium"
+                             name="Hi, Oskar"
+                             picture="/assets/img/profile.jpeg">
+                    </nb-user>
+                </div>
+                <nb-actions>
+                    <nb-action icon="home-outline"></nb-action>
+                    <nb-action icon="search-outline"></nb-action>
+                    <nb-action (click)="logout()"
+                               icon="log-out-outline"></nb-action>
+                </nb-actions>
+            </div>
+        </div>
     </nb-layout-header>
 
     <nb-sidebar>

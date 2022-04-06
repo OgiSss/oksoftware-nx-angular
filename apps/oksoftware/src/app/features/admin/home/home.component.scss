@@ -1,0 +1,35 @@
+.home {
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+  &__card {
+    display: flex;
+
+    h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
+    &-body {
+      min-width: 10rem;
+    }
+    &-icon {
+      nb-icon {
+        font-size: 3rem;
+      }
+    }
+  }
+}

@@ -8,18 +8,42 @@ import {
   NbLayoutModule,
   NbActionsModule,
   NbMenuModule,
+  NbUserModule,
+  NbCardModule,
+  NbIconModule,
 } from '@nebular/theme';
+import { HomeComponent } from './home/home.component';
+import { GridComponent } from './grid/grid.component';
+import { FeaturesComponent } from './features/features.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+
+const nbModules = [
+  NbSidebarModule,
+  NbLayoutModule,
+  NbActionsModule,
+  NbMenuModule,
+  NbUserModule,
+  NbCardModule,
+  NbIconModule,
+];
 
 @NgModule({
-  declarations: [AdminComponent],
+  declarations: [
+    AdminComponent,
+    HomeComponent,
+    GridComponent,
+    FeaturesComponent,
+    PrivacyComponent,
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    NbSidebarModule,
-    NbLayoutModule,
-    NbActionsModule,
-    NbMenuModule,
+    ...nbModules,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
 })
 export class AdminModule {}
