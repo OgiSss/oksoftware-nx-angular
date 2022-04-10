@@ -26,11 +26,6 @@ export class AdminComponent {
       icon: { icon: 'bulb-outline', pack: 'eva' },
       link: 'features',
     },
-    {
-      title: 'Privacy Policy',
-      icon: { icon: 'checkmark-outline', pack: 'eva' },
-      link: 'privacy',
-    },
   ];
 
   constructor(
