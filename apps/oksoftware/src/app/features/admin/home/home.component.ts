@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'oksoftware-nx-angular-home',
@@ -9,10 +15,13 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   options: any;
   options2: any;
-
   ngOnInit(): void {
     this.initFirstChart();
     this.initSecondChart();
+  }
+
+  tabChange() {
+    window.dispatchEvent(new Event('resize'));
   }
 
   initSecondChart() {

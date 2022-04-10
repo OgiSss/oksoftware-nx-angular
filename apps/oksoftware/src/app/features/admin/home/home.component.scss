@@ -3,9 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    @media only screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
+
+    > nb-card {
+      max-width: 30%;
+    }
   }
-
-
 
   &__card {
     display: flex;
@@ -27,9 +33,18 @@
       min-width: 10rem;
     }
     &-icon {
+      position: absolute;
+      right: 1rem;
       nb-icon {
         font-size: 3rem;
       }
     }
+  }
+
+  &__charts {
+    width: 100%;
+  }
+
+  &__chart {
   }
 }

@@ -39,7 +39,7 @@ export class AdminComponent {
   ) {}
 
   toggle() {
-    this.sidebarService.toggle(false, 'left');
+    this.sidebarService.toggle(true, 'left');
   }
 
   logout() {

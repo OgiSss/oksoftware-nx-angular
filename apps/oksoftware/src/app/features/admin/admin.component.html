@@ -3,7 +3,8 @@
     <nb-layout-header fixed>
         <div class="header">
             <div class="header__logo">
-                <nb-icon icon="menu-2-outline"
+                <nb-icon oksoftwareNxAngularIpadResponsive
+                         icon="menu-2-outline"
                          (click)="toggle()"></nb-icon>
                 <img class=""
                      srcset="/assets/img/logo.svg" />
@@ -27,7 +28,7 @@
         </div>
     </nb-layout-header>
 
-    <nb-sidebar>
+    <nb-sidebar responsive>
         <nb-menu [items]="items">
         </nb-menu>
     </nb-sidebar>

@@ -11,12 +11,17 @@ import {
   NbUserModule,
   NbCardModule,
   NbIconModule,
+  NbTabsetModule,
+  NbTreeGridModule,
 } from '@nebular/theme';
 import { HomeComponent } from './home/home.component';
-import { GridComponent } from './grid/grid.component';
+import { FsIconComponent, GridComponent } from './grid/grid.component';
 import { FeaturesComponent } from './features/features.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { HideElementsDirective } from './features/directives/hide-elements.directive';
+import { HideTabletDirective } from './features/directives/hide-tablet.directive';
+import { TrimPipe } from './features/pipes/trim.pipe';
 
 const nbModules = [
   NbSidebarModule,
@@ -26,6 +31,8 @@ const nbModules = [
   NbUserModule,
   NbCardModule,
   NbIconModule,
+  NbTabsetModule,
+  NbTreeGridModule,
 ];
 
 @NgModule({
@@ -35,6 +42,10 @@ const nbModules = [
     GridComponent,
     FeaturesComponent,
     PrivacyComponent,
+    HideElementsDirective,
+    HideTabletDirective,
+    TrimPipe,
+    FsIconComponent,
   ],
   imports: [
     CommonModule,

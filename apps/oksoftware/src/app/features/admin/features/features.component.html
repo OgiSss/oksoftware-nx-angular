@@ -1,1 +1,129 @@
-<p>features works!</p>
+<div class="features">
+
+    <nb-card class="features__item">
+        <nb-card-header>Structural directive</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>Structural Directives</strong> are directives which change the structure of the DOM by adding or
+                removing elements. There are three built-in structural directives, NgIf, NgFor and NgSwitch.
+            </p>
+
+            <div *oksoftwareNxAngularHideElements="hide">
+                <code>
+                    <pre>   
+                        {{code}}
+                    </pre>
+                </code>
+            </div>
+
+            <p>
+                <button nbButton
+                        (click)="hide = !hide">Toggle custom ngif</button>
+            </p>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>Attribute directive</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>Attribute Directives</strong> listen to and modify the behavior of other HTML
+                elements, attributes, properties, and components.
+            </p>
+
+            <div oksoftwareNxAngularHideTablet>
+                <pre>
+                    <code>
+                        {{code2}}
+                    </code>
+                </pre>
+            </div>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>View Child</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>View Child</strong> which are linked to a Component
+            </p>
+            <code>
+                <pre>
+                    {{code3}}
+                </pre>
+            </code>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>View Children</nb-card-header>
+        <nb-card-body>
+            <strong>View Child </strong> returns the first matching element and <strong>ViewChildren</strong> returns
+            all the matching elements as a QueryList of items.
+            <code>
+                <pre>
+                    {{code4}}
+                </pre>
+        </code>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>Host view</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>Host Views </strong>which are linked to a Component
+            </p>
+            <code>
+            <pre>
+                    {{code5}}
+            </pre> </code>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>Embedded view</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>Embedded Views</strong> which are linked to a Template
+            </p>
+            <pre>
+                <code>
+                    {{code6}}
+                </code>
+            </pre>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>Pure pipe</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>A pure pipe</strong> is only called when Angular detects a change in the value or the parameters
+                passed to a pipe
+            </p>
+            <pre>
+                <code>
+                    {{code8}}
+                </code>
+            </pre>
+        </nb-card-body>
+    </nb-card>
+
+    <nb-card class="features__item">
+        <nb-card-header>Impure pipe</nb-card-header>
+        <nb-card-body>
+            <p>
+                <strong>An impure pipe</strong> is called for every change detection cycle no matter whether the value
+                or parameters changes. i.e, An
+                impure pipe is called often, as often as every keystroke or mouse-move.
+            </p>
+            <pre>
+                        <code>
+                            {{code8}}
+                        </code>
+                    </pre>
+        </nb-card-body>
+    </nb-card>
+
+</div>

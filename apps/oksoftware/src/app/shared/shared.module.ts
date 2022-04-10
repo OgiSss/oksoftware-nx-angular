@@ -10,6 +10,7 @@ import {
   NbIconModule,
   NbCheckboxModule,
 } from '@nebular/theme';
+import { IpadResponsiveDirective } from './directives/ipad-responsive.directive';
 
 const modules = [
   NbButtonModule,
@@ -23,8 +24,8 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [IpadResponsiveDirective],
   imports: [CommonModule, ...modules],
-  exports: [CommonModule, ...modules],
+  exports: [CommonModule, ...modules, IpadResponsiveDirective],
 })
 export class SharedModule {}
