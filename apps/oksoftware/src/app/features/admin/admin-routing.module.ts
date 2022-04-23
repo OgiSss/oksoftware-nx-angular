@@ -6,6 +6,7 @@ import { FeaturesComponent } from './features/features.component';
 import { GridComponent } from './grid/grid.component';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { RxjsComponent } from './rxjs/rxjs/rxjs.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'rxjs', component: RxjsComponent },
       { path: 'grid', component: GridComponent },
       { path: 'features', component: FeaturesComponent },
       { path: 'privacy', component: PrivacyComponent },
@@ -21,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), SharedModule],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class AdminRoutingModule {}

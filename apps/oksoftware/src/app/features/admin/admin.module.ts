@@ -22,6 +22,13 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { HideElementsDirective } from './features/directives/hide-elements.directive';
 import { HideTabletDirective } from './features/directives/hide-tablet.directive';
 import { TrimPipe } from './features/pipes/trim.pipe';
+import { SharedReplayComponent } from './rxjs/shared-replay/shared-replay.component';
+import { PublishReplayComponent } from './rxjs/publish-replay/publish-replay.component';
+import { PublishComponent } from './rxjs/publish/publish.component';
+import { RxjsComponent } from './rxjs/rxjs/rxjs.component';
+import { SharedComponent } from './rxjs/shared/shared.component';
+import { WithLatestFromComponent } from './rxjs/with-latest-from/with-latest-from.component';
+import { CombineLatestComponent } from './rxjs/combine-latest/combine-latest.component';
 
 const nbModules = [
   NbSidebarModule,
@@ -46,6 +53,14 @@ const nbModules = [
     HideTabletDirective,
     TrimPipe,
     FsIconComponent,
+
+    SharedComponent,
+    PublishComponent,
+    SharedReplayComponent,
+    PublishReplayComponent,
+    RxjsComponent,
+    WithLatestFromComponent,
+    CombineLatestComponent,
   ],
   imports: [
     CommonModule,

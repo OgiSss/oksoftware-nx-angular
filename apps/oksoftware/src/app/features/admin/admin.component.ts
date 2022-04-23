@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
   selector: 'oksoftware-nx-angular-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminComponent {
   items: NbMenuItem[] = [
@@ -25,6 +25,11 @@ export class AdminComponent {
       title: 'Angular features',
       icon: { icon: 'bulb-outline', pack: 'eva' },
       link: 'features',
+    },
+    {
+      title: 'RxJs',
+      icon: { icon: 'bulb-outline', pack: 'eva' },
+      link: 'rxjs',
     },
   ];
 
