@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthResetPasswordGuard } from '../../core/guards/auth-reset-password.guard';
 import { AuthComponent } from './auth/auth.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +27,7 @@ export const routes: Routes = [
       {
         path: 'reset-password',
         component: ResetPasswordComponent,
+        canActivate: [AuthResetPasswordGuard],
       },
     ],
   },
