@@ -37,4 +37,40 @@ export class AuthService {
       headers,
     });
   }
+
+  public forgotPassword(email: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    const forgotPasswordUrl = `${this.url}/api/auth/forgot-password`;
+    return this.httpClient.post<UserResponseModel>(
+      forgotPasswordUrl,
+      { email },
+      {
+        headers,
+      }
+    );
+  }
+
+  public resetPassword(
+    code: string,
+    password: string,
+    passwordConfirmation: string
+  ) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+
+    const forgotPasswordUrl = `${this.url}/api/auth/reset-password`;
+
+    const data = JSON.stringify({
+      code,
+      password,
+      passwordConfirmation,
+    });
+    return this.httpClient.post<UserResponseModel>(forgotPasswordUrl, data, {
+      headers,
+    });
+  }
 }

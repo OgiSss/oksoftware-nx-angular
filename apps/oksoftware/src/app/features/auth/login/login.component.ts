@@ -24,7 +24,6 @@ export class LoginComponent implements OnDestroy {
   constructor(
     private readonly toastrService: NbToastrService,
     readonly formBuilder: FormBuilder,
-    private readonly router: Router,
     private readonly store: Store<AuthState>
   ) {
     this.loginForm = formBuilder.group({

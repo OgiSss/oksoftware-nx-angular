@@ -10,12 +10,14 @@ import { NbIconModule } from '@nebular/theme';
 import { AuthService } from '../../core/auth/services/auth.service';
 import { AuthComponent } from './auth/auth.component';
 import { NbSidebarModule, NbLayoutModule } from '@nebular/theme';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
     AuthComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     HttpClientModule,
